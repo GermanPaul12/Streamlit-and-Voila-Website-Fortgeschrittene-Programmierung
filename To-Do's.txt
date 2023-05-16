@@ -1,0 +1,4 @@
+Welche To-Do's sind noch offen?
+
+1. Options bei Voila erklären (Syntax in der Command line zum aufrufen voila <path to jupyter notebook> <options>)
+2. Vergleich Voila und Streamlit
