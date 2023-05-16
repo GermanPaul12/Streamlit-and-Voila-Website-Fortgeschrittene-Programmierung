@@ -4,3 +4,5 @@ Welche To-Do's sind noch offen?
 2. Vergleich Voila und Streamlit
 3. Fix Devision by zero Voila
 4. Implementation calculator on streamlit
+5. Create a history List for mathequations (Mabey 10 last equations)
+6. Add Navigationbar for headlines (streamlit)
