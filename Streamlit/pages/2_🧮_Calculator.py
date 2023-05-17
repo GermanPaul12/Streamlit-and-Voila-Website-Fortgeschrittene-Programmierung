@@ -7,11 +7,21 @@ import plotly.express as px
 st.set_page_config('Calculator',page_icon='🧮')
 state = st.session_state
 
-def main():
 
+
+def main():
+    # Sidebar
+    with st.sidebar:
+        st.title("Sections")
+        st.markdown("[Start](#calculator-app-using-streamlit)", unsafe_allow_html=True)
+        st.markdown("[Simple Calculator](#simple-calculator)", unsafe_allow_html=True)
+        st.markdown("[CSV Calculator](#csv-calculator)", unsafe_allow_html=True)
+    
     # Calculator
     with st.container():
-        st.title("Calculator App using Streamlit",)
+        st.title("Calculator App using Streamlit")
+        st.write("---")  # creates a horizontal line
+        st.header("Simple Calculator",)
         st.write("---")  # creates a horizontal line
         
         st.write("Operation")
@@ -29,7 +39,7 @@ def main():
 
     # CSV - Calculator
     with st.container():
-        st.title("Calculator App using Streamlit")
+        st.header("CSV Calculator")
         st.write("---")
         st.subheader(
             "Please provide a csv as shown in the example below. Column names should be the same.")
@@ -84,7 +94,9 @@ def main():
                 
             else:
                 st.warning("No Csv File is Uploaded")     
-            
+    
+
+   
 # ---- METHODES ----
 
 @st.cache_data
