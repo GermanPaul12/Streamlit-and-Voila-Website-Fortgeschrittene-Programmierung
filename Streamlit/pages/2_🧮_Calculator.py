@@ -2,6 +2,8 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 
+
+
 st.set_page_config('Calculator',page_icon='🧮')
 state = st.session_state
 
@@ -36,18 +38,47 @@ def main():
         df
 
         st.subheader("Upload Csv")
-        csv_file = st.file_uploader("Upload Csv",
+        
+        csv_file = st.file_uploader("Upload your csv file to calculate results for whole dataset",
                                     type=["csv"])
-
         if csv_file:
             data = pd.read_csv(csv_file)
 
-        if st.button("Calculate result", key='csv'):
-            result = [calculate(df.num1.iloc[i], df.num2.iloc[i],
-                                df.op.iloc[i], return_message=False) for i in range(len(df))]
+        with st.container():
+            col1, col2 = st.columns(2)
+            with col1:
+                calc_result = st.button("Calculate result", key='csv')
+            with col2:
+                save_file = st.button("Download Csv")
+        
+        if calc_result:
+            if csv_file:
+                results = [calculate(data.num1.iloc[i], data.num2.iloc[i],
+                                    data.op.iloc[i], return_message=False) for i in range(len(data))]
 
-            df["result"] = result
-            df        
+                data["result"] = results
+                data       
+            else:
+                st.warning("Please upload a csv file")    
+            
+        
+        if save_file:
+            if csv_file is not None:
+                # To See details
+                csv_details = {"file_name":csv_file.name,
+                "file_type":csv_file.type,
+                                "file_size":csv_file.size}
+                st.write(csv_details)
+                # To save uploaded Csv
+                results = [calculate(data.num1.iloc[i], data.num2.iloc[i],
+                                    data.op.iloc[i], return_message=False) for i in range(len(data))]
+
+                data["result"] = results     
+                data.to_csv("downloaded_streamlit_csv.csv", index=False)       
+                    
+                st.success("Csv Saved Successfully")
+            else:
+                st.warning("No Csv File is Uploaded")     
             
 # ---- METHODES ----
 
