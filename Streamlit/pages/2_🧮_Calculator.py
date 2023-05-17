@@ -1,7 +1,7 @@
 import streamlit as st
 import numpy as np
 import pandas as pd
-
+import plotly.express as px
 
 
 st.set_page_config('Calculator',page_icon='🧮')
@@ -58,6 +58,10 @@ def main():
 
                 data["result"] = results
                 data       
+                op_count = data.op.value_counts()
+                bar = px.bar(op_count, title="How many operations are there in the dataset for each operator")
+                
+                st.plotly_chart(bar)
             else:
                 st.warning("Please upload a csv file")    
             
@@ -77,6 +81,7 @@ def main():
                 data.to_csv("downloaded_streamlit_csv.csv", index=False)       
                     
                 st.success("Csv Saved Successfully")
+                
             else:
                 st.warning("No Csv File is Uploaded")     
             
