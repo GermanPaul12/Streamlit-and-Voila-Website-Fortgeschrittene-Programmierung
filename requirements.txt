@@ -2,3 +2,4 @@ ipywidgets
 numpy
 pandas
 streamlit
+voila
