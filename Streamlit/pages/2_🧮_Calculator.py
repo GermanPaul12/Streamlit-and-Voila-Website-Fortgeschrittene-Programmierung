@@ -10,6 +10,8 @@ state = st.session_state
 
 
 def main():
+    if 'calc_list' not in st.session_state:
+        st.session_state.calc_list = []
     # Sidebar
     with st.sidebar:
         st.title("Sections")
@@ -35,6 +37,14 @@ def main():
         num2 = st.number_input(label="Enter second number",value=0,key='number2')
         calculate(num1, num2, op)
         
+        with st.expander("History List of the last 10 calculations"):
+            if len(st.session_state.calc_list) > 1:
+                for i in st.session_state.calc_list:
+                    st.write(i)
+            elif len(st.session_state.calc_list) == 1:
+                st.write(st.session_state.calc_list[0])
+            else:
+                st.write("No previous calculations")            
         st.write("---")  # creates a horizontal line
 
     # CSV - Calculator
@@ -57,21 +67,24 @@ def main():
         with st.container():
             col1, col2 = st.columns(2)
             with col1:
-                calc_result = st.button("Calculate result", key='csv')
+                calc_result = st.button("Calculate result ad create insights", key='csv')
             with col2:
                 save_file = st.button("Download Csv")
         
         if calc_result:
             if csv_file:
-                results = [calculate(data.num1.iloc[i], data.num2.iloc[i],
-                                    data.op.iloc[i], return_message=False) for i in range(len(data))]
+                with st.expander("Exapnd to see results"):
+                    
+                    results = [calculate(data.num1.iloc[i], data.num2.iloc[i],
+                                        data.op.iloc[i], return_message=False) for i in range(len(data))]
 
-                data["result"] = results
-                data       
-                op_count = data.op.value_counts()
-                bar = px.bar(op_count, title="How many operations are there in the dataset for each operator")
-                
-                st.plotly_chart(bar)
+                    data["result"] = results
+                    data       
+                    op_count = data.op.value_counts()
+                    bar = px.bar(op_count, title="How many operations are there in the dataset for each operator")
+                    pie = px.pie(op_count, values="op", names=op_count.index, title="Distribution of operators in the dataset")
+                    st.plotly_chart(bar)
+                    st.plotly_chart(pie)
             else:
                 st.warning("Please upload a csv file")    
             
@@ -98,6 +111,12 @@ def main():
 
    
 # ---- METHODES ----
+def add_calculation_to_history(calculation):
+    '''
+    Adds given calculation to the history
+    @param calculation: The calculation to add to history
+    '''
+    st.session_state.calc_list.append(calculation) 
 
 @st.cache_data
 def calculate(num1:(int|float), num2:(int|float), op:(str), return_message:(bool)=True):
@@ -132,6 +151,7 @@ def calculate(num1:(int|float), num2:(int|float), op:(str), return_message:(bool
         case other:
             st.error('This should not happen! Please report to the authorities')
     if return_message:
+        add_calculation_to_history(f"{state['number1']} {operator} {state['number2']} = {round(ans,6)}")
         st.success(f"{state['number1']} {operator} {state['number2']} = {round(ans,6)}")
         return ans
     else:

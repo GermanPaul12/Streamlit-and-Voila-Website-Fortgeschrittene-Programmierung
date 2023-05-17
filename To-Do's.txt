@@ -1,8 +1,25 @@
 Welche To-Do's sind noch offen?
 
-1. Options bei Voila erklären (Syntax in der Command line zum aufrufen voila <path to jupyter notebook> <options>)
-2. Vergleich Voila und Streamlit
-3. Fix Devision by zero Voila
-4. Implementation calculator on streamlit
-5. Create a history List for mathequations (Mabey 10 last equations)
-6. Add Navigationbar for headlines (streamlit)
+Add Components:
+
+- Implementation calculator on streamlit - German, Michael (done)
+- Create a history List for mathequations (Mabey 10 last equations) - German (done)
+- Add Navigationbar for headlines (streamlit) - German (done)
+- Add Pages for possible Components (streamlit) - Michael (done)
+- Create Content for 4_Code.py, 3_Streamlit.py (streamlit)
+- Add Testing/Unittests?
+
+Documentation:
+
+- Options bei Voila erklären (Syntax in der Command line zum aufrufen voila <path to jupyter notebook> <options>)
+- Vergleich Voila und Streamlit
+- Designe our Homepage (streamlit)
+
+Fixing:
+
+- Fix Devision by zero Voila
+
+Ci:
+
+- Harmonize Streamlit and Voila App (Show Voila some love 💓)
+- Make Code-Improvements
