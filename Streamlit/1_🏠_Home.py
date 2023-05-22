@@ -14,3 +14,13 @@ with st.container():
 # ---- MAIN SECTION ----
 with st.container():
     st.write('---')
+    
+    st.header('Contributers')
+    col1,col2,col3,col4 = st.columns(4)
+    
+    col1 = st.image('assets/img/GP_GitHub.jpg',use_column_width=True)
+    col2 = st.image('assets/img/MG_GitHub.png',use_column_width=True)
+    col3 = st.image('assets/img/F_GitHub.png',use_column_width=True)
+    col4 = st.image('assets/img/DS_GitHub.png',use_column_width=True)
+    st.header('Target Goal')
+    st.write()
