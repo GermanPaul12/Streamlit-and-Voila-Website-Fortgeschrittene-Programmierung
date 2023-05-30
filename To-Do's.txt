@@ -17,9 +17,9 @@ Documentation:
 
 Fixing:
 
-- Fix Devision by zero Voila
+- Fix Devision by zero Voila - Michael (done)
 
 Ci:
 
-- Harmonize Streamlit and Voila App (Show Voila some love 💓)
+- Harmonize Streamlit and Voila App (Show Voila some love 💓) - Michael (in Progress)
 - Make Code-Improvements

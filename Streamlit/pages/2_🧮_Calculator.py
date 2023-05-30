@@ -13,9 +13,9 @@ def main():
     # Sidebar
     with st.sidebar:
         st.title("Sections")
-        st.markdown("[Start](#calculator-app-using-streamlit)", unsafe_allow_html=True)
-        st.markdown("[Simple Calculator](#simple-calculator)", unsafe_allow_html=True)
-        st.markdown("[CSV Calculator](#csv-calculator)", unsafe_allow_html=True)
+        st.markdown("[*Start*](#calculator-app-using-streamlit)", unsafe_allow_html=True)
+        st.markdown("[*Simple Calculator*](#simple-calculator)", unsafe_allow_html=True)
+        st.markdown("[*CSV Calculator*](#csv-calculator)", unsafe_allow_html=True, help='Go to CSV-Calculator')
     
     # Calculator
     with st.container():
