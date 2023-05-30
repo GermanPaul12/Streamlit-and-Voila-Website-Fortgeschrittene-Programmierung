@@ -13,7 +13,7 @@ Documentation:
 
 - Options bei Voila erklären (Syntax in der Command line zum aufrufen voila <path to jupyter notebook> <options>)
 - Vergleich Voila und Streamlit
-- Designe our Homepage (streamlit)
+- Designe our Homepage (streamlit) - Michael (done)
 
 Fixing:
 
