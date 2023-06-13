@@ -8,7 +8,6 @@ import seaborn as sns
 import altair as alt
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
-import time
 
 # st.code('')
 
