@@ -12,7 +12,7 @@ Add Components:
 Documentation:
 
 - Options bei Voila erklären (Syntax in der Command line zum aufrufen voila <path to jupyter notebook> <options>)
-- Vergleich Voila und Streamlit
+- Vergleich Voila und Streamlit - German (work in progress)
 - Designe our Homepage (streamlit) - Michael (done)
 
 Fixing:
