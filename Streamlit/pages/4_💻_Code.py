@@ -1,4 +1,5 @@
 import streamlit as st
+st.set_page_config('Our Code',page_icon='💻')
 
 st.title("Our Calculator Code 💻")
 st.subheader("If you like to see the whole code then feel free to checkout our Github")

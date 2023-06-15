@@ -10,7 +10,7 @@ import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 
 # st.code('')
-
+st.set_page_config('Streamlit Components',page_icon='⚙')
 # Sidebar
 with st.sidebar:
     st.title("Sections")
