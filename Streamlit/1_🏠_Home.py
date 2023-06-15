@@ -42,8 +42,9 @@ with st.container():
     st.header('Read the docs')
     col1,col2 = st.columns(2)
     with col1:
-        st.image('assets/img/DS_GitHub.png',use_column_width=True)
-        st.write("[Voila](https://voila.readthedocs.io/en/stable/)",use_column_width=True)
+        st.image('assets/img/voila_icon.png',use_column_width=True)
+        st.markdown("""<a style='display: block; text-align: center;' href="https://voila.readthedocs.io/en/stable/">Voila</a>""",unsafe_allow_html=True,)
     with col2:
-        pass
+        st.image('assets/img/streamlit_icon.png',use_column_width=True)
+        st.markdown("""<a style='display: block; text-align: center;' href="https://docs.streamlit.io/">Streamlit</a>""",unsafe_allow_html=True,)
         
