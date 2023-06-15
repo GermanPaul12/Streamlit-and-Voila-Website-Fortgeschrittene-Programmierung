@@ -102,7 +102,7 @@ def main():
                 st.warning("No Csv File is Uploaded")     
    
 # ---- METHODES ----
-def add_calculation_to_history(calculation:(str)):
+def add_calculation_to_history(calculation:(str))->None:
     '''
     Adds given calculation to the history
     @param calculation: The calculation to add to history
@@ -110,7 +110,7 @@ def add_calculation_to_history(calculation:(str)):
     state.calc_list.append(calculation) 
 
 @st.cache_data
-def calculate(num1:(int|float), num2:(int|float), op:(str), return_message:(bool)=True):
+def calculate(num1:(int|float), num2:(int|float), op:(str), return_message:(bool)=True)->(int|float):
     '''
     Calculate any numbers with basic operators
     @param num1: Set to any numeric
