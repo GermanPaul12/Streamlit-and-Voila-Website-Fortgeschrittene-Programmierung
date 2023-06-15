@@ -31,8 +31,19 @@ with st.container():
     with col1:
         st.image('assets/img/GP_GitHub.jpg',use_column_width=True, caption='German Paul')
     with col2:
-        st.image('assets/img/MG_GitHub.jpg',use_column_width=True, caption='Michael Greif')
-    # with col3:
-    #   st.image('assets/img/F_GitHub.jpg',use_column_width=True, caption='Finn')
+        st.image('assets/img/MG_Github.png',use_column_width=True, caption='Michael Greif')
+    with col3:
+       st.image('assets/img/DS_GitHub.png',use_column_width=True, caption='David Siregar')
     # with col4:
     #   st.image('assets/img/DS_GitHub.jpg',use_column_width=True, caption='David Siregar')
+
+with st.container():
+    st.write('---')
+    st.header('Read the docs')
+    col1,col2 = st.columns(2)
+    with col1:
+        st.image('assets/img/DS_GitHub.png',use_column_width=True)
+        st.write("[Voila](https://voila.readthedocs.io/en/stable/)",use_column_width=True)
+    with col2:
+        pass
+        
