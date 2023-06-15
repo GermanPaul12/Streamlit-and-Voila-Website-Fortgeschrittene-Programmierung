@@ -11,7 +11,7 @@
 
 ## Documentation
 
-- Options bei Voila erklären (Syntax in der Command line zum aufrufen voila <path to jupyter notebook> <options>)
+- Options bei Voila erklären (Syntax in der Command line zum aufrufen voila `<path to jupyter notebook>` `<options>`)
 - Vergleich Voila und Streamlit - German (work in progress)
 - Designe our Homepage (streamlit) - Michael (done)
 
@@ -21,5 +21,5 @@
 
 ## Ci
 
-- Harmonize Streamlit and Voila App (Show Voila some love 💓) - Michael (in Progress)
+- Harmonize Streamlit and Voila App (Show Voila some love 💓) - Michael (done)
 - Make Code-Improvements
