@@ -110,7 +110,7 @@ def add_calculation_to_history(calculation:(str))->None:
     state.calc_list.append(calculation) 
 
 @st.cache_data
-def calculate(num1:(int|float), num2:(int|float), op:(str), return_message:(bool)=True)->(int or float):
+def calculate(num1:(int or float), num2:(int or float), op:(str), return_message:(bool)=True)->(int or float):
     '''
     Calculate any numbers with basic operators
     @param num1: Set to any numeric
