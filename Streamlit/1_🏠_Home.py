@@ -32,11 +32,14 @@ with st.container():
     col3,col4 = st.columns(2)
     
     with col1:
-        st.image('./assets/img/GP_Github.jpg',use_column_width=True, caption='German Paul')
+        GP_image = Image.open(os.path.relpath('./assets/img/GP_Github.jpg')) 
+        st.image(GP_image,use_column_width=True, caption='German Paul')
     with col2:
-        st.image('./assets/img/MG_Github.png',use_column_width=True, caption='Michael Greif')
+        MG_image = Image.open(os.path.relpath('./assets/img/MG_Github.png')) 
+        st.image(MG_image,use_column_width=True, caption='Michael Greif')
     with col3:
-        st.image('./assets/img/DS_Github.png',use_column_width=True, caption='David Siregar')
+        DS_image = Image.open(os.path.relpath('./assets/img/DS_Github.png'))
+        st.image(DS_image,use_column_width=True, caption='David Siregar')
     # with col4:
     #   st.image('assets/img/DS_GitHub.jpg',use_column_width=True, caption='David Siregar')
 
