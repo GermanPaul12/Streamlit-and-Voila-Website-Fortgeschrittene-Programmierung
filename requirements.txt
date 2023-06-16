@@ -8,3 +8,4 @@ matplotlib
 graphviz
 seaborn
 altair
+PIL
