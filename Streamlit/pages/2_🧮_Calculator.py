@@ -110,7 +110,7 @@ def add_calculation_to_history(calculation:(str))->None:
     state.calc_list.append(calculation) 
 
 @st.cache_data
-def calculate(num1:(int|float), num2:(int|float), op:(str), return_message:(bool)=True)->(int|float):
+def calculate_with_match_case(num1:(int|float), num2:(int|float), op:(str), return_message:(bool)=True)->(int|float):
     '''
     Calculate any numbers with basic operators
     @param num1: Set to any numeric
@@ -141,6 +141,44 @@ def calculate(num1:(int|float), num2:(int|float), op:(str), return_message:(bool
                 return ans
         case other:
             st.error('This should not happen! Please report to the authorities')
+    if return_message:
+        add_calculation_to_history(f"{state['number1']} {operator} {state['number2']} = {round(ans,10)}")
+        st.success(f"{state['number1']} {operator} {state['number2']} = {round(ans,10)}")
+        return ans
+    else:
+        return ans
+
+@st.cache_data
+def calculate(num1:(int|float), num2:(int|float), op:(str), return_message:(bool)=True)->(int|float):
+    '''
+    Calculate any numbers with basic operators
+    @param num1: Set to any numeric
+    @param num2: Set to any numeric
+    @param op: Choose your operator of choice
+    @param return_message: Let's you choose between displaying only a return message of your calculation or returning the result default: True
+    @return: Returns your mathematic result
+    '''
+    ans = 0
+    if (op == '+') or (op=='Add ( + )'):
+        operator = '+'
+        ans = num1 + num2
+    elif (op == "-") or (op =='Subtract ( - )'):
+        operator = '-'
+        ans = num1 - num2
+    elif (op == "*") or (op =='Multiply ( * )'):
+        operator = '*'
+        ans = num1 * num2
+    elif (op == "/") or (op =='Divide ( / )'):
+        operator = '/'
+        if num2 != 0:
+            ans = num1 / num2
+        else:
+            st.error(":color[:red[ERROR:]] Division by 0. Please enter a non-zero number.")
+            ans = np.NaN
+            st.error(f"{state['number1']} {operator} :red[{state['number2']}] = {ans}")
+            return ans
+    else:
+        st.error('This should not happen! Please report to the authorities')
     if return_message:
         add_calculation_to_history(f"{state['number1']} {operator} {state['number2']} = {round(ans,10)}")
         st.success(f"{state['number1']} {operator} {state['number2']} = {round(ans,10)}")
