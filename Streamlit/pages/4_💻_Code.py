@@ -109,22 +109,22 @@ def main():
    
 # ---- METHODES ----
 def add_calculation_to_history(calculation:(str))->None:
-    '''
+    """
     Adds given calculation to the history
     @param calculation: The calculation to add to history
-    '''
+    """
     state.calc_list.append(calculation) 
 
 @st.cache_data
 def calculate(num1:(int or float), num2:(int or float), op:(str), return_message:(bool)=True)->(int or float):
-    '''
+    """
     Calculate any numbers with basic operators
     @param num1: Set to any numeric
     @param num2: Set to any numeric
     @param op: Choose your operator of choice
     @param return_message: Let's you choose between displaying only a return message of your calculation or returning the result default: True
     @return: Returns your mathematic result
-    '''
+    """
     ans = 0
     if (op == '+') or (op=='Add ( + )'):
         operator = '+'
