@@ -32,13 +32,13 @@ with st.container():
     col3,col4 = st.columns(2)
     
     with col1:
-        GP_image = Image.open('assets/img/MG_Github.png')
+        GP_image = Image.open('assets/img/GP_Github.jpg')
         st.image(GP_image,use_column_width=True, caption='German Paul')
     with col2:
-        MG_image = Image.open(os.path.relpath('assets/img/MG_Github.png')) 
+        MG_image = Image.open('assets/img/MG_Github.png')
         st.image(MG_image,use_column_width=True, caption='Michael Greif')
     with col3:
-        DS_image = Image.open(os.path.relpath('assets/img/DS_Github.png'))
+        DS_image = Image.open('assets/img/DS_Github.png')
         st.image(DS_image,use_column_width=True, caption='David Siregar')
     # with col4:
     #   st.image('assets/img/DS_GitHub.jpg',use_column_width=True, caption='David Siregar')
@@ -48,11 +48,11 @@ with st.container():
     st.header('Read the docs')
     col1,col2 = st.columns(2)
     with col1:
-        voila_image = Image.open(os.path.relpath("assets/img/voila_icon.png"))
+        voila_image = Image.open("assets/img/voila_icon.png")
         st.image(voila_image,use_column_width=True)
         st.markdown("""<a style='display: block; text-align: center;' href="https://voila.readthedocs.io/en/stable/">Voila</a>""",unsafe_allow_html=True,)
     with col2:
-        streamlit_image = Image.open(os.path.relpath("assets/img/streamlit_icon.png"))
+        streamlit_image = Image.open("assets/img/streamlit_icon.png")
         st.image(streamlit_image,use_column_width=True)
         st.markdown("""<a style='display: block; text-align: center;' href="https://docs.streamlit.io/">Streamlit</a>""",unsafe_allow_html=True,)
         
