@@ -21,7 +21,7 @@ with st.container():
     st.header('Target Goal')
     st.write('We wanted to show how easy and fast you can build web-applications in Python only using the streamlit package. The result can be seen under 🧮:orange[Calculator] in the sidebar.')
     st.write("If you're interested how our code works you should click on 👨‍💻:orange[Code].")
-    
+print(os.getcwd())    
 # ---- Credits ----
 with st.container():
     st.write('---')
