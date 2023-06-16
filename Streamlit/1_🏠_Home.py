@@ -14,6 +14,13 @@ with st.container():
     st.title('Fortgeschrittene Programmierung - Webapplikation')
     st.write('You want to see our code? ➡ Check out our [Github Repository](https://github.com/GermanPaul12/Streamlit-and-Voila-Website-Fortgeschrittene-Programmierung) 💡')
 
+def file_selector(folder_path='.'):
+    filenames = os.listdir(folder_path)
+    selected_filename = st.selectbox('Select a file', filenames)
+    return os.path.join(folder_path, selected_filename)
+
+filename = file_selector()
+st.write('You selected `%s`' % filename)     
 # ---- MAIN SECTION ----
 
 with st.container():
@@ -57,11 +64,5 @@ with st.container():
         st.markdown("""<a style='display: block; text-align: center;' href="https://docs.streamlit.io/">Streamlit</a>""",unsafe_allow_html=True,)
         
 
-def file_selector(folder_path='.'):
-    filenames = os.listdir(folder_path)
-    selected_filename = st.selectbox('Select a file', filenames)
-    return os.path.join(folder_path, selected_filename)
-
-filename = file_selector()
-st.write('You selected `%s`' % filename)        
+   
         
