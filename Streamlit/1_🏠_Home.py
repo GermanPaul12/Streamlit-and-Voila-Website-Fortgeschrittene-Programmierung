@@ -14,13 +14,6 @@ with st.container():
     st.title('Fortgeschrittene Programmierung - Webapplikation')
     st.write('You want to see our code? ➡ Check out our [Github Repository](https://github.com/GermanPaul12/Streamlit-and-Voila-Website-Fortgeschrittene-Programmierung) 💡')
 
-def file_selector(folder_path='.'):
-    filenames = os.listdir(folder_path)
-    selected_filename = st.selectbox('Select a file', filenames)
-    return os.path.join(folder_path, selected_filename)
-
-filename = file_selector()
-st.write('You selected `%s`' % filename)     
 # ---- MAIN SECTION ----
 
 with st.container():
@@ -39,13 +32,13 @@ with st.container():
     col3,col4 = st.columns(2)
     
     with col1:
-        GP_image = Image.open(os.path.abspath('./assets/img/GP_GitHub.jpg')) 
+        GP_image = Image.open(os.path.relpath('./assets/img/GP_GitHub.jpg')) 
         st.image(GP_image,use_column_width=True, caption='German Paul')
     with col2:
-        MG_image = Image.open(os.path.abspath('./assets/img/MG_GitHub.png')) 
+        MG_image = Image.open(os.path.relpath('./assets/img/MG_GitHub.png')) 
         st.image(MG_image,use_column_width=True, caption='Michael Greif')
     with col3:
-        DS_image = Image.open(os.path.abspath('./assets/img/DS_GitHub.png'))
+        DS_image = Image.open(os.path.relpath('./assets/img/DS_GitHub.png'))
         st.image(DS_image,use_column_width=True, caption='David Siregar')
     # with col4:
     #   st.image('assets/img/DS_GitHub.jpg',use_column_width=True, caption='David Siregar')
@@ -55,11 +48,11 @@ with st.container():
     st.header('Read the docs')
     col1,col2 = st.columns(2)
     with col1:
-        voila_image = Image.open(os.path.abspath("./assets/img/voila_icon.png"))
+        voila_image = Image.open(os.path.relpath("./assets/img/voila_icon.png"))
         st.image(voila_image,use_column_width=True)
         st.markdown("""<a style='display: block; text-align: center;' href="https://voila.readthedocs.io/en/stable/">Voila</a>""",unsafe_allow_html=True,)
     with col2:
-        streamlit_image = Image.open(os.path.abspath("./assets/img/streamlit_icon.png"))
+        streamlit_image = Image.open(os.path.relpath("./assets/img/streamlit_icon.png"))
         st.image(streamlit_image,use_column_width=True)
         st.markdown("""<a style='display: block; text-align: center;' href="https://docs.streamlit.io/">Streamlit</a>""",unsafe_allow_html=True,)
         
