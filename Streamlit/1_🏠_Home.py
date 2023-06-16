@@ -32,7 +32,7 @@ with st.container():
     col3,col4 = st.columns(2)
     
     with col1:
-        GP_image = Image.open('assets/img/GP_Github.jpg')
+        GP_image = Image.open('assets/img/GP_Github.png')
         st.image(GP_image,use_column_width=True, caption='German Paul')
     with col2:
         MG_image = Image.open('assets/img/MG_Github.png')
