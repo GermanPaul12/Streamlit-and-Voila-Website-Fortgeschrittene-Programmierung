@@ -9,3 +9,5 @@ graphviz
 seaborn
 altair
 Pillow
+requests
+ipyleaflet
