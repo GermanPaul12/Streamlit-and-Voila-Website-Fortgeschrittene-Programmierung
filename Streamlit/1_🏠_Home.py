@@ -40,8 +40,8 @@ with st.container():
     with col3:
         DS_image = Image.open('assets/img/DS_Github.png')
         st.image(DS_image,use_column_width=True, caption='David Siregar')
-    # with col4:
-    #   st.image('assets/img/DS_GitHub.jpg',use_column_width=True, caption='David Siregar')
+    with col4:
+      st.image('assets/img/FM_GitHub.jpg',use_column_width=True, caption='Finn Münstermann')
 
 with st.container():
     st.write('---')
