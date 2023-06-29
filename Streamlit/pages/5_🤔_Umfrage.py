@@ -10,7 +10,6 @@ class Credentials:
     api_url = "https://api.sheety.co/986330bc80cb53b1444abc4dc001bec9/answersFortgeschritteneProgrammierung/formResponses1"
 
 
-@st.cache_data
 def get_data():    
     response = requests.get(Credentials.api_url)
     data = response.json()
@@ -21,12 +20,12 @@ def get_data():
         elif i["wasFindetIhrBesser?"] == "Voila":
             df.Voila += 1    
     df.to_csv("UmfrageDaten.csv", index = False)    
-    return df    
 
 df = pd.read_csv("UmfrageDaten.csv")
 chart, ax = plt.subplots()
-ax.bar(x=df.columns, height=df.iloc[0])
+bars = ax.bar(x=df.columns, height=df.iloc[0], color=["black", "orange"])
 ax.set_yticks([i for i in range(0,31,2)])
+ax.bar_label(bars)
 "Ergebnisdiagramm", chart
 if st.button("Update Chart"):
             get_data()
