@@ -26,6 +26,8 @@ chart, ax = plt.subplots()
 bars = ax.bar(x=df.columns, height=df.iloc[0], color=["black", "orange"])
 ax.set_yticks([i for i in range(0,31,2)])
 ax.bar_label(bars)
+ax.set_xlabel("Frameworks")
+ax.set_ylabel("Votes which is better (WWI22DSB)")
 "Ergebnisdiagramm", chart
 if st.button("Update Chart"):
             get_data()
